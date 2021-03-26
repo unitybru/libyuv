@@ -35,12 +35,12 @@ ADD_EXECUTABLE			( yuvconvert ${ly_base_dir}/util/yuvconvert.cc )
 TARGET_LINK_LIBRARIES	( yuvconvert ${ly_lib_static} )
 
 
-INCLUDE ( FindJPEG )
-if (JPEG_FOUND)
-  include_directories( ${JPEG_INCLUDE_DIR} )
-  target_link_libraries( yuvconvert ${JPEG_LIBRARY} )
-  add_definitions( -DHAVE_JPEG )
-endif()
+#INCLUDE ( FindJPEG )
+#if (JPEG_FOUND)
+#  include_directories( ${JPEG_INCLUDE_DIR} )
+#  target_link_libraries( yuvconvert ${JPEG_LIBRARY} )
+#  add_definitions( -DHAVE_JPEG )
+#endif()
 
 if(TEST)
   find_library(GTEST_LIBRARY gtest)
